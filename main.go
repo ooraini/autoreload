@@ -54,12 +54,12 @@ func main() {
 		os.Exit(1)
 	}
 
-	if os.Getenv("DEBUG") == "true" {
+	if os.Getenv("AUTORELOAD_DEBUG") == "true" {
 		debug = true
 	}
 
 	var matcher = regexp.MustCompile(".*")
-	pattern := os.Getenv("PATTERN")
+	pattern := os.Getenv("AUTORELOAD_PATTERN")
 	if pattern != "" {
 		matcher = regexp.MustCompile(pattern)
 	}
